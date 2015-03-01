@@ -1,0 +1,17 @@
+import datetime
+import turtle
+start=datetime.datetime.now()
+
+turtle.taildown()
+turtle.goto(50,50)
+turtle.goto(100,0)
+turtle.speed(1)
+turtle.goto(96,57)
+
+end=datetime.datetime.now()
+
+yara=end-start
+print ("time=",yara)
+#in order for there to be a highscore it needs to be saved in a different file and checked everytime to see if the new highscore is bigger than the old one. this means that there need to be changes occurred in the file, because the game won't save the highscore.
+
+turtle.mainloop()
