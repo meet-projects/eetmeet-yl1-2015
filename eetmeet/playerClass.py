@@ -11,7 +11,11 @@ class Player(Turtle):
         self.hight=45
         self.width=20
         self.goto(self.x,self.y)
-        self.shape("arrow");
+        self.shape("arrow")
+        self.pencolor("red")
+        self.speed(3)
+
+
 
     def getSize(self):
         return self.hight*self.width
@@ -22,6 +26,7 @@ class Player(Turtle):
     def jump(self):
         x = self.xcor()
         y = self.ycor()
+        print("hey")
         self.goto(x,y+50)
         self.goto(x,y)
 

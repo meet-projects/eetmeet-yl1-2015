@@ -1,3 +1,6 @@
+import turtle
+from turtle import *
+
 class Spikes_top(Turtle):
     def __init__(self,canvas):
         RawTurtle.__init__(self,canvas)

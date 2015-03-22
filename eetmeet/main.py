@@ -1,5 +1,7 @@
 from turtle import *
 from playerClass import Player
+from spikes import Spikes_top
+from spikes import Spikes_bottom
 import tkinter.messagebox
 import tkinter
 import random
@@ -53,12 +55,12 @@ def main():
 		# Tell the ship to move
 		plr.jump()
 		# Set the timer to go off again in 5 milliseconds
-		screen.ontimer(play, 5)
+		screen.ontimer(play, 10)
 		# GAME LOOP (ENDS)
 
 	# Set the timer to go off the first time in 5 milliseconds
-	screen.ontimer(play,5)
-	screen.tracer(10)
+	screen.ontimer(play,10)
+	screen.tracer(1)
 	tkinter.mainloop()
 
 	
