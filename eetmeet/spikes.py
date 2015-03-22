@@ -4,10 +4,11 @@ from turtle import *
 class Spikes_top(Turtle):
     def __init__(self,canvas):
         RawTurtle.__init__(self,canvas)
-        self.x=200 #the edge of the screen
-        self.y=100
+        self.x=20 #the edge of the screen
+        self.y=50
         self.hight=50
         self.width=15
+        self.goto(self.x,self.y)
         
         def move(self,speed):
             x = self.xcor() # this line gives me the current x cordination of the astroid and saves it in variable x
@@ -27,6 +28,7 @@ class Spikes_bottom(Turtle):
         self.y=0
         self.hight=50
         self.width=15
+        self.goto(self.x,self.y)
     
     def move(self,speed):
         x = self.xcor() # this line gives me the current x cordination of the spikes and saves it in variable x

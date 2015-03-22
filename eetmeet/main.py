@@ -36,31 +36,33 @@ def main():
 	screen.setworldcoordinates(screenMinX,screenMinY,screenMaxX,screenMaxY)
 	frame = tkinter.Frame(root)
 	frame.pack(side = tkinter.RIGHT,fill=tkinter.BOTH)
-
+	screen.register_shape("Character.gif")
+	sb = Spikes_bottom(cv)
+	st = Spikes_top(cv)
 	plr = Player(cv)
 	
 	# this function when it is called the game will exit    
 	def quitHandler():
 		root.destroy()
 		root.quit()
-#here we are creating the button that you will see it on the right side of the game called Quit
+	#here we are creating the button that you will see it on the right side of the game called Quit
     # the part it says command=quitHandler is telling the button when we click it to run the function quitHandler that we defined above
 	quitButton = tkinter.Button(frame, text = "Quit", command=quitHandler)
 	quitButton.pack()
 
 	# GAME LOOP (BEGIN)
 	def play():
-		print("test")
 		# Tell all the elements of the game to move
 		# Tell the ship to move
-		plr.jump()
 		# Set the timer to go off again in 5 milliseconds
-		screen.ontimer(play, 10)
+		screen.ontimer(play, 5)
 		# GAME LOOP (ENDS)
-
 	# Set the timer to go off the first time in 5 milliseconds
-	screen.ontimer(play,10)
-	screen.tracer(1)
+	screen.ontimer(play,5)
+	screen.onkeypress(plr.jump,"Up")
+	screen.onkeypress(plr.duck, "Down")
+	#screen.tracer(1)
+	screen.listen()
 	tkinter.mainloop()
 
 	
