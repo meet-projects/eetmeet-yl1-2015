@@ -34,9 +34,10 @@ def main():
 	t = RawTurtle(cv)
 	screen = t.getscreen()
 	screen.setworldcoordinates(screenMinX,screenMinY,screenMaxX,screenMaxY)
+	screen.register_shape("Character.gif")
 	frame = tkinter.Frame(root)
 	frame.pack(side = tkinter.RIGHT,fill=tkinter.BOTH)
-	screen.register_shape("Character.gif")
+	screen.tracer(10)
 	sb = Spikes_bottom(cv)
 	st = Spikes_top(cv)
 	plr = Player(cv)
@@ -50,10 +51,14 @@ def main():
 	quitButton = tkinter.Button(frame, text = "Quit", command=quitHandler)
 	quitButton.pack()
 
+
 	# GAME LOOP (BEGIN)
 	def play():
 		# Tell all the elements of the game to move
 		# Tell the ship to move
+		plr.move()
+		sb.move(5)
+		st.move(5)
 		# Set the timer to go off again in 5 milliseconds
 		screen.ontimer(play, 5)
 		# GAME LOOP (ENDS)
@@ -61,7 +66,6 @@ def main():
 	screen.ontimer(play,5)
 	screen.onkeypress(plr.jump,"Up")
 	screen.onkeypress(plr.duck, "Down")
-	#screen.tracer(1)
 	screen.listen()
 	tkinter.mainloop()
 

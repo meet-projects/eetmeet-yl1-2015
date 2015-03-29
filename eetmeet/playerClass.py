@@ -23,17 +23,18 @@ class Player(Turtle):
         return 8
    
     def jump(self):
-        x = self.xcor()
-        y = self.ycor()
-        print("hey")
-        self.goto(x,y+25)
-        self.goto(x,y)
+        self.x = self.xcor()
+        self.y = self.ycor()
+        self.y = self.y+1
 
     def duck(self):
         x = self.xcor()
         y = self.ycor()
         self.goto(x,y-25)
         self.goto(x,y)
+
+    def move(self):
+        self.goto(self.x, self.y)
 
 
 
