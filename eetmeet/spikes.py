@@ -45,16 +45,10 @@ class Spikes_bottom(Turtle):
             self.st()
         self.goto(x-speed,y)
 
-<<<<<<< HEAD
-    def getRadius(self):
-        return 8
-
-=======
 
     def getSize(self):
         return self.hight*self.width
 
     def getRadius(self):
         return self.width/2
->>>>>>> cb95174b983871551e59447c6bfe34e5288d9590
 
