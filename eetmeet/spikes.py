@@ -6,20 +6,18 @@ class Spikes_top(Turtle):
         RawTurtle.__init__(self,canvas)
         self.penup()
         self.x=200 #the edge of the screen
-        self.y=100
+        self.y=70
         self.hight=50
         self.width=15
         self.goto(self.x,self.y)
-        self.speed(5)
+        #self.shape("spikesT.gif")- FIX THIS
         
     def move(self,speed):
         x = self.xcor() # this line gives me the current x cordination of the astroid and saves it in variable x
         y = self.ycor() # this line gives me the current y cordination of the astroid and saves it in variable y
-        if x-speed <= 0:
-            self.ht()
-            self.goto(self.x,self.y)
-            self.st()
         self.goto(x-speed,y)
+        if x-speed <= 0:
+            self.goto(self.x,self.y)
 
     def getSize(self):
         return self.hight*self.width
@@ -32,21 +30,18 @@ class Spikes_bottom(Turtle):
         RawTurtle.__init__(self,canvas)
         self.penup()
         self.x=200 #the edge of the screen
-        self.y=0
+        self.y=30
         self.hight=50
         self.width=15
+        #self.shape("spikesB.gif")- FIX THIS
         self.goto(self.x,self.y)
-        self.speed(5)
     
     def move(self,speed):
         x = self.xcor() # this line gives me the current x cordination of the spikes and saves it in variable x
         y = self.ycor() # this line gives me the current y cordination of the spikes and saves it in variable y
-        if x-speed <= 0:
-            self.ht()
-            self.goto(self.x,self.y)
-            self.st()
         self.goto(x-speed,y)
-
+        if x-speed <= 0:
+            self.goto(self.x,self.y)
 
     def getSize(self):
         return self.hight*self.width

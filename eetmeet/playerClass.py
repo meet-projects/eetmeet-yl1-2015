@@ -7,13 +7,15 @@ class Player(Turtle):
         self.penup()
         self.x=20
         self.y=50
-        self.dy=self.y
+        self.dy=0
         self.score=0
         self.hight=45
         self.width=20
         self.goto(self.x,self.y)
         self.shape("Character.gif")
-        self.speed(1)
+        #self.speed(1)
+        self.countup=0
+        self.countdown=0
 
 
     def getSize(self):
@@ -23,19 +25,38 @@ class Player(Turtle):
         return 8
    
     def jump(self):
-        self.x = self.xcor()
-        self.y = self.ycor()
-        self.dy = self.y+15
+        self.dy = 15
+        self.countup = 0
 
     def duck(self):
-        x = self.xcor()
-        y = self.ycor()
-        self.dy = self.y-15
+        self.dy = -15
+        self.countdown = 0
 
     def move(self):
-        self.goto(self.x, self.dy)
-        if self.dy!=self.y:
-            self.dy=self.y
+        
+        self.goto(self.xcor(), self.y+self.dy)
+
+        #this is to make the player jump and return to it's place afterwards
+        if self.countup < 100:
+            self.countup = self.countup + 1
+        elif self.countup < 200:
+            if self.dy > 0:
+                self.dy = -self.dy
+            self.countup = self.countup + 1
+        else:
+            self.dy = 0
+            self.countup = 0
+
+        #this is to make the player duck and return to it's place afterwards
+        if self.countdown < 100:
+            self.countdown = self.countdown + 1
+        elif self.countdown < 200:
+            if self.dy < 0:
+                self.dy = -self.dy
+            self.countdown = self.countdown + 1
+        else:
+            self.dy = 0
+            self.countudown = 0
 
 
 

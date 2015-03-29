@@ -15,6 +15,7 @@ screenMaxY = 100
 
 
 def intersect(object1,object2):
+       
         dist = math.sqrt((object1.xcor() - object2.xcor())**2 + (object1.ycor() - object2.ycor())**2)
         
         radius1 = object1.getRadius()
@@ -41,6 +42,8 @@ def main():
 	sb = Spikes_bottom(cv)
 	st = Spikes_top(cv)
 	plr = Player(cv)
+	t.goto(20,40)
+	t.circle(8)
 	
 	# this function when it is called the game will exit    
 	def quitHandler():
@@ -57,8 +60,11 @@ def main():
 		# Tell all the elements of the game to move
 		# Tell the ship to move
 		plr.move()
-		sb.move(1)
 		st.move(1)
+		sb.move(2)
+		if (intersect(plr,st) or intersect(plr,sb)):
+			print("boom")
+			quitHandler()
 		# Set the timer to go off again in 5 milliseconds
 		screen.ontimer(play, 5)
 		# GAME LOOP (ENDS)
