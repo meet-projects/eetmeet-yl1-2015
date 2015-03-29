@@ -7,13 +7,13 @@ class Player(Turtle):
         self.penup()
         self.x=20
         self.y=50
+        self.dy=self.y
         self.score=0
         self.hight=45
         self.width=20
         self.goto(self.x,self.y)
         self.shape("Character.gif")
         self.speed(1)
-
 
 
     def getSize(self):
@@ -25,16 +25,21 @@ class Player(Turtle):
     def jump(self):
         self.x = self.xcor()
         self.y = self.ycor()
-        self.y = self.y+1
+        self.dy = self.y+15
 
     def duck(self):
         x = self.xcor()
         y = self.ycor()
-        self.goto(x,y-25)
-        self.goto(x,y)
+        self.dy = self.y-15
 
     def move(self):
-        self.goto(self.x, self.y)
+        self.goto(self.x, self.dy)
+        if self.dy!=self.y:
+            self.dy=self.y
+
+
+
+
 
 
 

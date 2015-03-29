@@ -57,8 +57,8 @@ def main():
 		# Tell all the elements of the game to move
 		# Tell the ship to move
 		plr.move()
-		sb.move(5)
-		st.move(5)
+		sb.move(1)
+		st.move(1)
 		# Set the timer to go off again in 5 milliseconds
 		screen.ontimer(play, 5)
 		# GAME LOOP (ENDS)

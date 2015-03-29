@@ -10,6 +10,7 @@ class Spikes_top(Turtle):
         self.hight=50
         self.width=15
         self.goto(self.x,self.y)
+        self.speed(5)
         
     def move(self,speed):
         x = self.xcor() # this line gives me the current x cordination of the astroid and saves it in variable x
@@ -35,6 +36,7 @@ class Spikes_bottom(Turtle):
         self.hight=50
         self.width=15
         self.goto(self.x,self.y)
+        self.speed(5)
     
     def move(self,speed):
         x = self.xcor() # this line gives me the current x cordination of the spikes and saves it in variable x
