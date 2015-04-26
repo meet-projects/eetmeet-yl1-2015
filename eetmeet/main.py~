@@ -60,8 +60,8 @@ def main():
 		# Tell all the elements of the game to move
 		# Tell the ship to move
 		plr.move()
-		st.move(0.3)
-		sb.move(0.7)
+		st.move(1.5)
+		sb.move(1.1)
 		if (intersect(plr,st) or intersect(plr,sb)):
 			print (" ")
 			print("boom")

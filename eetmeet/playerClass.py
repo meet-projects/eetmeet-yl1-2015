@@ -16,6 +16,8 @@ class Player(Turtle):
         #self.speed(1)
         self.countup=0
         self.countdown=0
+        self.up = False
+        self.down = False
 
 
     def getSize(self):
@@ -25,10 +27,12 @@ class Player(Turtle):
         return 8
    
     def jump(self):
+        self.up = True
         self.dy = 15
         self.countup = 0
 
     def duck(self):
+        self.down = True
         self.dy = -15
         self.countdown = 0
 
@@ -37,26 +41,31 @@ class Player(Turtle):
         self.goto(self.xcor(), self.y+self.dy)
 
         #this is to make the player jump and return to it's place afterwards
-        if self.countup < 100:
-            self.countup = self.countup + 1
-        elif self.countup < 200:
-            if self.dy > 0:
-                self.dy = -self.dy
-            self.countup = self.countup + 1
-        else:
-            self.dy = 0
-            self.countup = 0
+        if self.up:
+            self.up = False
+            if self.countup < 100:
+                self.countup = self.countup + 1
+            elif self.countup < 200:
+                if self.dy > 0:
+                    self.dy = -self.dy
+                self.countup = self.countup + 1
+            else:
+                self.dy = 0
+                self.countup = 0
+            
 
         #this is to make the player duck and return to it's place afterwards
-        if self.countdown < 100:
-            self.countdown = self.countdown + 1
-        elif self.countdown < 200:
-            if self.dy < 0:
-                self.dy = -self.dy
-            self.countdown = self.countdown + 1
-        else:
-            self.dy = 0
-            self.countudown = 0
+        if self.down:
+            self.down = False
+            if self.countdown < 100:
+                self.countdown = self.countdown + 1
+            elif self.countdown < 200:
+                if self.dy < 0:
+                    self.dy = -self.dy
+                self.countdown = self.countdown + 1
+            else:
+                self.dy = 0
+                self.countudown = 0
 
 
 
