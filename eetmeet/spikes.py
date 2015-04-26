@@ -39,7 +39,14 @@ class Spikes_bottom(Turtle):
     def move(self,speed):
         x = self.xcor() # this line gives me the current x cordination of the spikes and saves it in variable x
         y = self.ycor() # this line gives me the current y cordination of the spikes and saves it in variable y
+<<<<<<< HEAD
+
+        
+        self.goto(x,y)
+
+=======
         self.goto(x-speed,y)
+>>>>>>> b90aa65695ede8b2af837b5e5d9924eb8d9a29be
         if x-speed <= 0:
             self.goto(self.x,self.y)
 
