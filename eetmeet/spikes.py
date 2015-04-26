@@ -29,7 +29,7 @@ class Spikes_bottom(Turtle):
     def __init__(self,canvas):
         RawTurtle.__init__(self,canvas)
         self.penup()
-        self.x=200 #the edge of the screen
+        self.x=200 
         self.y=30
         self.hight=50
         self.width=15
