@@ -42,30 +42,29 @@ class Player(Turtle):
 
         #this is to make the player jump and return to it's place afterwards
         if self.up:
-            self.up = False
             if self.countup < 100:
                 self.countup = self.countup + 1
             elif self.countup < 200:
                 if self.dy > 0:
-                    self.dy = -self.dy
+                    self.dy = 0
                 self.countup = self.countup + 1
             else:
                 self.dy = 0
                 self.countup = 0
-            
+                self.up = False
 
         #this is to make the player duck and return to it's place afterwards
         if self.down:
-            self.down = False
             if self.countdown < 100:
                 self.countdown = self.countdown + 1
             elif self.countdown < 200:
                 if self.dy < 0:
-                    self.dy = -self.dy
+                    self.dy = 0
                 self.countdown = self.countdown + 1
             else:
                 self.dy = 0
                 self.countudown = 0
+                self.down = False
 
 
 
