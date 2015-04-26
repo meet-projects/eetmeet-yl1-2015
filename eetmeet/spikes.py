@@ -8,7 +8,7 @@ class Spikes_top(Turtle):
         self.x=200 #the edge of the screen
         self.y=70
         self.hight=50
-        self.width=15
+        self.width=20
         self.goto(self.x,self.y)
         #self.shape("spikesT.gif")- FIX THIS
         
